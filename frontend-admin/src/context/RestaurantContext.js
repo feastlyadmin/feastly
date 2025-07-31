@@ -12,10 +12,16 @@ export const restaurantsReducer = (state, action) => {
       return {
         restaurants: [action.payload, ...state.restaurants]
       };
-    // Add the new case for deleting a restaurant
     case 'DELETE_RESTAURANT':
       return {
         restaurants: state.restaurants.filter((r) => r._id !== action.payload._id)
+      };
+    // Add the new case for updating a restaurant
+    case 'UPDATE_RESTAURANT':
+      return {
+        restaurants: state.restaurants.map((restaurant) =>
+          restaurant._id === action.payload._id ? action.payload : restaurant
+        )
       };
     default:
       return state;
