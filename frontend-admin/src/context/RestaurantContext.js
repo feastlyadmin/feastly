@@ -12,6 +12,11 @@ export const restaurantsReducer = (state, action) => {
       return {
         restaurants: [action.payload, ...state.restaurants]
       };
+    // Add the new case for deleting a restaurant
+    case 'DELETE_RESTAURANT':
+      return {
+        restaurants: state.restaurants.filter((r) => r._id !== action.payload._id)
+      };
     default:
       return state;
   }
@@ -19,7 +24,7 @@ export const restaurantsReducer = (state, action) => {
 
 export const RestaurantContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(restaurantsReducer, {
-    restaurants: [] // Using an empty array as the initial state
+    restaurants: []
   });
 
   return (

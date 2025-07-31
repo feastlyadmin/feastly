@@ -1,43 +1,26 @@
-import { useEffect } from 'react';
-import { useRestaurantContext } from './hooks/useRestaurantContext';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-// Components
-import RestaurantDetails from './components/RestaurantDetails';
-import RestaurantForm from './components/RestaurantForm';
+// pages & components
+import Home from './pages/Home';
+import Navbar from './components/Navbar';
 
 function App() {
-  const { restaurants, dispatch } = useRestaurantContext();
-
-  useEffect(() => {
-    const fetchRestaurants = async () => {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/restaurants`);
-      const json = await response.json();
-
-      if (response.ok) {
-        dispatch({ type: 'SET_RESTAURANTS', payload: json });
-      }
-    };
-
-    fetchRestaurants();
-  }, [dispatch]); // Dependency array to prevent re-running on every render
-
   return (
     <div className="App">
-      <header>
-        <h1>Feastly Admin Dashboard</h1>
-      </header>
-      <main className="home">
-        <div className="restaurants">
-          {restaurants && restaurants.map((restaurant) => (
-            <RestaurantDetails key={restaurant._id} restaurant={restaurant} />
-          ))}
+      <BrowserRouter>
+        <Navbar />
+        <div className="pages">
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+            />
+          </Routes>
         </div>
-        <RestaurantForm />
-      </main>
+      </BrowserRouter>
     </div>
   );
 }
 
-// This is the line that was missing
 export default App;

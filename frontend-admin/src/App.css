@@ -10,22 +10,31 @@ body {
 header {
   background: #fff;
 }
-header h1 {
-  max-width: 1200px;
+header .container {
+  max-width: 1400px;
   margin: 0 auto;
   padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header a {
+  color: #333;
+  text-decoration: none;
+}
+header h1 {
   color: #c02c03;
 }
-.App {
-  max-width: 1200px;
-  margin: 0 auto;
+.pages {
+  max-width: 1400px;
   padding: 20px;
+  margin: 0 auto;
 }
 
 /* Home Page Layout */
 .home {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
   gap: 100px;
 }
 
@@ -33,10 +42,11 @@ header h1 {
 .restaurant-details {
   background: #fff;
   border-radius: 4px;
-  margin: 20px auto;
+  margin: 0 auto 20px auto;
   padding: 20px;
   position: relative;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+  width: 100%;
 }
 .restaurant-details h4 {
   margin: 0 0 10px 0;
@@ -47,6 +57,18 @@ header h1 {
   margin: 0;
   font-size: 0.9em;
   color: #555;
+}
+
+/* Delete Button */
+.restaurant-details .delete-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
 }
 
 /* Form Styling */
