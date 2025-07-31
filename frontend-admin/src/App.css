@@ -1,0 +1,81 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* Layout */
+body {
+  background: #f1f1f1;
+  margin: 0;
+  font-family: "Poppins";
+}
+header {
+  background: #fff;
+}
+header h1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  color: #c02c03;
+}
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Home Page Layout */
+.home {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 100px;
+}
+
+/* Restaurant Details Card */
+.restaurant-details {
+  background: #fff;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+.restaurant-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: #c02c03;
+}
+.restaurant-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Form Styling */
+label, input {
+  display: block;
+}
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+form button {
+  background: #c02c03;
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid #e7195a;
+  color: #e7195a;
+  border-radius: 4px;
+  margin: 20px 0;
+}
