@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     const fetchRestaurants = async () => {
-      const response = await fetch('http://localhost:4000/api/restaurants');
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/restaurants`);
       const json = await response.json();
 
       if (response.ok) {
